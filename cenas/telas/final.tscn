@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/final.gd" type="Script" id=1]
+[ext_resource path="res://img/tela endgame.jpg" type="Texture" id=2]
+[ext_resource path="res://img/tela endgame2.jpg" type="Texture" id=3]
+[ext_resource path="res://som/menu.wav" type="AudioStream" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="FimJogo1" type="Sprite" parent="."]
+position = Vector2( 635.864, 360.966 )
+scale = Vector2( 0.567255, 0.567255 )
+texture = ExtResource( 2 )
+
+[node name="FimJogo2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 635.864, 360.966 )
+scale = Vector2( 0.567255, 0.567255 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.7
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 9.764
+autoplay = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

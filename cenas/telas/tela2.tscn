@@ -1,0 +1,1461 @@
+[gd_scene load_steps=67 format=2]
+
+[ext_resource path="res://cenas/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/script_telas/tela2.gd" type="Script" id=2]
+[ext_resource path="res://cenas/donut.tscn" type="PackedScene" id=3]
+[ext_resource path="res://img/map/Jungle_terrain.png" type="Texture" id=4]
+[ext_resource path="res://img/map/backgournd.png" type="Texture" id=5]
+[ext_resource path="res://scripts/TriggerVoador.gd" type="Script" id=6]
+[ext_resource path="res://scripts/TriggerPerseguidor.gd" type="Script" id=7]
+[ext_resource path="res://img/perseguidor trigger.png" type="Texture" id=8]
+[ext_resource path="res://img/voador trigger.png" type="Texture" id=9]
+[ext_resource path="res://cenas/deadzone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://cenas/inimigo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/azuis.gd" type="Script" id=12]
+[ext_resource path="res://scripts/trap.gd" type="Script" id=13]
+[ext_resource path="res://img/HUD Menus.png" type="Texture" id=14]
+[ext_resource path="res://img/Elementos metal.png" type="Texture" id=15]
+[ext_resource path="res://img/bear trap.png" type="Texture" id=16]
+[ext_resource path="res://som/trap.wav" type="AudioStream" id=17]
+[ext_resource path="res://cenas/trap.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/roxos.gd" type="Script" id=19]
+[ext_resource path="res://img/chave.png" type="Texture" id=20]
+[ext_resource path="res://img/homer car.png" type="Texture" id=21]
+[ext_resource path="res://img/paredes labirinto.png" type="Texture" id=22]
+[ext_resource path="res://som/telas.wav" type="AudioStream" id=23]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 64, 0, 32, 64, 32, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 32, 96, 32, 96, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 192, 96, 0, 96, 0, 64, 192, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=17]
+0/name = "Jungle_terrain.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Jungle_terrain.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 32, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Jungle_terrain.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 0, 32, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Jungle_terrain.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 384, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Jungle_terrain.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 544, 128, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Jungle_terrain.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 416, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "Jungle_terrain.png 6"
+6/texture = ExtResource( 4 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 576, 0, 96, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Jungle_terrain.png 7"
+7/texture = ExtResource( 4 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 704, 32, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Jungle_terrain.png 8"
+8/texture = ExtResource( 4 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 384, 192, 96 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "Jungle_terrain.png 9"
+9/texture = ExtResource( 4 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 224, 256, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "Jungle_terrain.png 10"
+10/texture = ExtResource( 4 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 288, 320, 64, 64 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "Jungle_terrain.png 11"
+11/texture = ExtResource( 4 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 448, 0, 32, 128 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "Jungle_terrain.png 12"
+12/texture = ExtResource( 4 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 480, 0, 32, 128 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+12/z_index = 0
+13/name = "Jungle_terrain.png 13"
+13/texture = ExtResource( 4 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 96, 64, 96, 64 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+13/z_index = 0
+14/name = "Jungle_terrain.png 14"
+14/texture = ExtResource( 4 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 320, 32, 64 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+15/name = "Jungle_terrain.png 15"
+15/texture = ExtResource( 4 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 32, 320, 32, 64 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+15/z_index = 0
+16/name = "Jungle_terrain.png 16"
+16/texture = ExtResource( 4 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 64, 320, 32, 64 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+16/z_index = 0
+17/name = "Jungle_terrain.png 17"
+17/texture = ExtResource( 4 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 256, 256, 32, 32 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+17/z_index = 0
+18/name = "Jungle_terrain.png 18"
+18/texture = ExtResource( 4 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 288, 256, 32, 32 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+18/z_index = 0
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 15.971
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 15.6015
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 88.5771, 22.2553 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 83.8535, 60.2272 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 160.768, 30.5778 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 157.774, 27.5841 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 26.1, 11.5823 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "ativar_trap"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("bear trap:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 31, 266, 134, 34 ), Rect2( 181, 245, 129, 52 ), Rect2( 338, 228, 108, 67 ), Rect2( 488, 219, 78, 76 ), Rect2( 615, 215, 39, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "ativar_trap"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("bear trap:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 31, 266, 134, 34 ), Rect2( 181, 245, 129, 52 ), Rect2( 338, 228, 108, 67 ), Rect2( 488, 219, 78, 76 ), Rect2( 615, 215, 39, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "ativar_trap"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("bear trap:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 31, 266, 134, 34 ), Rect2( 181, 245, 129, 52 ), Rect2( 338, 228, 108, 67 ), Rect2( 488, 219, 78, 76 ), Rect2( 615, 215, 39, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "ativar_trap"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("bear trap:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 31, 266, 134, 34 ), Rect2( 181, 245, 129, 52 ), Rect2( 338, 228, 108, 67 ), Rect2( 488, 219, 78, 76 ), Rect2( 615, 215, 39, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 88.5771, 22.2553 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 83.8535, 60.2272 )
+
+[sub_resource type="CapsuleShape2D" id=31]
+radius = 18.1635
+height = 104.252
+
+[sub_resource type="CapsuleShape2D" id=32]
+radius = 17.6627
+height = 104.753
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 355.422, 68.6872 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 17.5274, 112.967 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 23.8392, 10.9208 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 264.354, 36.7595 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 461.244, 39.029 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 173.538, 35.6819 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 118.077, 36.9552 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 36.4624, 39.6974 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 37.0675, 181.382 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 37.5747, 264.592 )
+
+[sub_resource type="CircleShape2D" id=43]
+radius = 15.6015
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 66.9077, 528.45 )
+
+[node name="donut" parent="." instance=ExtResource( 3 )]
+position = Vector2( 739.485, 199.337 )
+
+[node name="donut4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1577.57, 60.662 )
+
+[node name="donut3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3566.73, -290.603 )
+
+[node name="donut5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5053.56, -90.9951 )
+
+[node name="donut6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5099.76, -92.5352 )
+
+[node name="donut7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5144.42, -92.5352 )
+
+[node name="donut8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5081.8, -131.549 )
+
+[node name="donut9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5129.02, -132.576 )
+
+[node name="donut10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5105.53, -169.536 )
+
+[node name="donut2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 936.613, 570.52 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="backgournd" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 652.008, 353.494 )
+scale = Vector2( 0.681027, 0.694558 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 2, 0 )
+tile_set = SubResource( 17 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -589714, 13, 0, -393115, 13, 0, -393112, 13, 0, -196513, 13, 0, -196480, 14, 0, -196479, 15, 0, -196478, 15, 0, -196477, 15, 0, -196476, 15, 0, -196475, 15, 0, -196474, 15, 0, -196473, 15, 0, -196472, 15, 0, -196471, 15, 0, -196470, 15, 0, -196469, 15, 0, -196468, 15, 0, -196467, 15, 0, -196466, 15, 0, -196465, 15, 0, -196464, 15, 0, -196463, 15, 0, -196462, 15, 0, -196461, 15, 0, -196460, 15, 0, -196459, 15, 0, -196458, 15, 0, -196457, 15, 0, -196456, 15, 0, -196455, 15, 0, -196454, 15, 0, -196453, 15, 0, -196452, 15, 0, -196451, 15, 0, -196450, 15, 0, -196449, 15, 0, -196448, 15, 0, -196447, 15, 0, -196446, 15, 0, -65428, 13, 0, -65408, 11, 0, -65407, 4, 0, -65406, 4, 0, -65405, 4, 0, -65404, 4, 0, -65403, 4, 0, -65402, 4, 0, -65401, 4, 0, -65400, 4, 0, -65399, 4, 0, -65398, 4, 0, -65397, 4, 0, -65396, 4, 0, -65395, 4, 0, -65394, 4, 0, -65393, 4, 0, -65392, 4, 0, -65391, 4, 0, -65390, 4, 0, -65389, 4, 0, -65388, 4, 0, -65387, 4, 0, -65386, 4, 0, -65385, 4, 0, -65384, 4, 0, -65383, 4, 0, -65382, 4, 0, -65381, 4, 0, -65380, 4, 0, -65379, 4, 0, -65378, 4, 0, -65377, 4, 0, -65376, 4, 0, -65375, 4, 0, -65374, 4, 0, 129, 4, 0, 130, 4, 0, 131, 4, 0, 132, 4, 0, 133, 4, 0, 134, 4, 0, 135, 4, 0, 136, 4, 0, 137, 4, 0, 138, 4, 0, 139, 4, 0, 140, 4, 0, 141, 4, 0, 142, 4, 0, 143, 4, 0, 144, 4, 0, 145, 4, 0, 146, 4, 0, 147, 4, 0, 148, 4, 0, 149, 4, 0, 150, 4, 0, 151, 4, 0, 152, 4, 0, 153, 4, 0, 154, 4, 0, 155, 4, 0, 156, 4, 0, 157, 4, 0, 158, 4, 0, 159, 4, 0, 160, 4, 0, 161, 4, 0, 162, 4, 0, 65625, 13, 0, 65651, 13, 0, 65652, 13, 0, 65653, 13, 0, 65654, 13, 0, 65655, 13, 0, 65656, 13, 0, 65657, 13, 0, 65658, 13, 0, 65659, 13, 0, 65660, 13, 0, 65665, 4, 0, 65666, 4, 0, 65667, 4, 0, 65668, 4, 0, 65669, 4, 0, 65670, 4, 0, 65671, 4, 0, 65672, 4, 0, 65673, 4, 0, 65674, 4, 0, 65675, 4, 0, 65676, 4, 0, 65677, 4, 0, 65678, 4, 0, 65679, 4, 0, 65680, 4, 0, 65681, 4, 0, 65682, 4, 0, 65683, 4, 0, 65684, 4, 0, 65685, 4, 0, 65686, 4, 0, 65687, 4, 0, 65688, 4, 0, 65689, 4, 0, 65690, 4, 0, 65691, 4, 0, 65692, 4, 0, 65693, 4, 0, 65694, 4, 0, 65695, 4, 0, 65696, 4, 0, 65697, 4, 0, 65698, 4, 0, 131100, 0, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 1, 0, 131113, 1, 0, 131114, 1, 0, 131115, 2, 0, 131120, 0, 0, 131121, 1, 0, 131122, 1, 0, 131123, 1, 0, 131124, 1, 0, 131125, 1, 0, 131126, 1, 0, 131127, 1, 0, 131128, 1, 0, 131129, 1, 0, 131130, 1, 0, 131131, 2, 0, 131200, 9, 0, 131201, 4, 0, 131202, 4, 0, 131203, 4, 0, 131204, 4, 0, 131205, 4, 0, 131206, 4, 0, 131207, 4, 0, 131208, 4, 0, 131209, 4, 0, 131210, 4, 0, 131211, 4, 0, 131212, 4, 0, 131213, 4, 0, 131214, 4, 0, 131215, 4, 0, 131216, 4, 0, 131217, 4, 0, 131218, 4, 0, 131219, 4, 0, 131220, 4, 0, 131221, 4, 0, 131222, 4, 0, 131223, 4, 0, 131224, 4, 0, 131225, 4, 0, 131226, 4, 0, 131227, 4, 0, 131228, 4, 0, 131229, 4, 0, 131230, 4, 0, 131231, 4, 0, 131232, 4, 0, 131233, 4, 0, 131234, 4, 0, 196636, 0, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 196648, 1, 0, 196649, 1, 0, 196650, 1, 0, 196651, 2, 0, 196656, 0, 0, 196657, 1, 0, 196658, 1, 0, 196659, 1, 0, 196660, 1, 0, 196661, 1, 0, 196662, 1, 0, 196663, 1, 0, 196664, 1, 0, 196665, 1, 0, 196666, 1, 0, 196667, 2, 0, 262221, 14, 0, 262222, 15, 0, 262223, 15, 0, 262224, 15, 0, 262225, 15, 0, 262226, 15, 0, 262227, 15, 0, 262228, 15, 0, 262229, 16, 0, 327700, 8, 0, 393293, 11, 0, 393294, 4, 0, 393295, 4, 0, 393296, 4, 0, 393297, 4, 0, 393298, 4, 0, 393299, 4, 0, 393300, 4, 0, 393301, 12, 0, 458830, 4, 0, 458831, 4, 0, 458832, 4, 0, 458833, 4, 0, 458834, 4, 0, 458835, 4, 0, 458836, 4, 0, 458837, 12, 0, 524366, 4, 0, 524367, 4, 0, 524368, 4, 0, 524369, 4, 0, 524370, 4, 0, 524371, 4, 0, 524372, 4, 0, 524373, 12, 0, 589902, 4, 0, 589903, 4, 0, 589904, 4, 0, 589905, 4, 0, 589906, 4, 0, 589907, 4, 0, 589908, 4, 0, 589909, 12, 0, 655370, 8, 0, 655437, 11, 0, 655438, 4, 0, 655439, 4, 0, 655440, 4, 0, 655441, 4, 0, 655442, 4, 0, 655443, 4, 0, 655444, 4, 0, 655445, 12, 0, 720974, 4, 0, 720975, 4, 0, 720976, 4, 0, 720977, 4, 0, 720978, 4, 0, 720979, 4, 0, 720980, 4, 0, 720981, 12, 0, 786450, 8, 0, 786510, 4, 0, 786511, 4, 0, 786512, 4, 0, 786513, 4, 0, 786514, 4, 0, 786515, 4, 0, 786516, 4, 0, 786517, 12, 0, 852046, 4, 0, 852047, 4, 0, 852048, 4, 0, 852049, 4, 0, 852050, 4, 0, 852051, 4, 0, 852052, 4, 0, 852053, 12, 0, 917581, 11, 0, 917582, 4, 0, 917583, 4, 0, 917584, 4, 0, 917585, 4, 0, 917586, 4, 0, 917587, 4, 0, 917588, 4, 0, 917589, 12, 0, 983118, 4, 0, 983119, 4, 0, 983120, 4, 0, 983121, 4, 0, 983122, 4, 0, 983123, 4, 0, 983124, 4, 0, 983125, 12, 0, 1048654, 4, 0, 1048655, 4, 0, 1048656, 4, 0, 1048657, 4, 0, 1048658, 4, 0, 1048659, 4, 0, 1048660, 4, 0, 1048661, 12, 0, 1114189, 11, 0, 1114190, 4, 0, 1114191, 4, 0, 1114192, 4, 0, 1114193, 4, 0, 1114194, 4, 0, 1114195, 4, 0, 1114196, 4, 0, 1114197, 12, 0, 1179648, 0, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1179676, 1, 0, 1179677, 1, 0, 1179678, 1, 0, 1179679, 1, 0, 1179680, 1, 0, 1179681, 1, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 2, 0, 1179726, 4, 0, 1179727, 4, 0, 1179728, 4, 0, 1179729, 4, 0, 1179730, 4, 0, 1179731, 4, 0, 1179732, 4, 0, 1179733, 12, 0, 1245262, 4, 0, 1245263, 4, 0, 1245264, 4, 0, 1245265, 4, 0, 1245266, 4, 0, 1245267, 4, 0, 1245268, 4, 0, 1245269, 12, 0, 1310720, 3, 0, 1310721, 4, 0, 1310722, 4, 0, 1310723, 4, 0, 1310724, 4, 0, 1310725, 4, 0, 1310726, 4, 0, 1310727, 4, 0, 1310728, 4, 0, 1310729, 4, 0, 1310730, 4, 0, 1310731, 4, 0, 1310732, 4, 0, 1310733, 4, 0, 1310734, 4, 0, 1310735, 4, 0, 1310736, 4, 0, 1310737, 4, 0, 1310738, 4, 0, 1310739, 4, 0, 1310740, 4, 0, 1310741, 4, 0, 1310742, 4, 0, 1310743, 4, 0, 1310744, 4, 0, 1310745, 4, 0, 1310746, 4, 0, 1310747, 4, 0, 1310748, 4, 0, 1310749, 4, 0, 1310750, 4, 0, 1310751, 4, 0, 1310752, 4, 0, 1310753, 4, 0, 1310754, 4, 0, 1310755, 4, 0, 1310756, 4, 0, 1310757, 5, 0, 1310798, 4, 0, 1310799, 4, 0, 1310800, 4, 0, 1310801, 4, 0, 1310802, 4, 0, 1310803, 4, 0, 1310804, 4, 0, 1310805, 12, 0, 1376256, 3, 0, 1376257, 4, 0, 1376258, 4, 0, 1376259, 4, 0, 1376260, 4, 0, 1376261, 4, 0, 1376262, 4, 0, 1376263, 4, 0, 1376264, 4, 0, 1376265, 4, 0, 1376266, 4, 0, 1376267, 4, 0, 1376268, 4, 0, 1376269, 4, 0, 1376270, 4, 0, 1376271, 4, 0, 1376272, 4, 0, 1376273, 4, 0, 1376274, 4, 0, 1376275, 4, 0, 1376276, 4, 0, 1376277, 4, 0, 1376278, 4, 0, 1376279, 4, 0, 1376280, 4, 0, 1376281, 4, 0, 1376282, 4, 0, 1376283, 4, 0, 1376284, 4, 0, 1376285, 4, 0, 1376286, 4, 0, 1376287, 4, 0, 1376288, 4, 0, 1376289, 4, 0, 1376290, 4, 0, 1376291, 4, 0, 1376292, 4, 0, 1376293, 5, 0, 1376333, 11, 0, 1376334, 4, 0, 1376335, 4, 0, 1376336, 4, 0, 1376337, 4, 0, 1376338, 4, 0, 1376339, 4, 0, 1376340, 4, 0, 1441792, 3, 0, 1441793, 4, 0, 1441794, 4, 0, 1441795, 4, 0, 1441796, 4, 0, 1441797, 4, 0, 1441798, 4, 0, 1441799, 4, 0, 1441800, 4, 0, 1441801, 4, 0, 1441802, 4, 0, 1441803, 4, 0, 1441804, 4, 0, 1441805, 4, 0, 1441806, 4, 0, 1441807, 4, 0, 1441808, 4, 0, 1441809, 4, 0, 1441810, 4, 0, 1441811, 4, 0, 1441812, 4, 0, 1441813, 4, 0, 1441814, 4, 0, 1441815, 4, 0, 1441816, 4, 0, 1441817, 4, 0, 1441818, 4, 0, 1441819, 4, 0, 1441820, 4, 0, 1441821, 4, 0, 1441822, 4, 0, 1441823, 4, 0, 1441824, 4, 0, 1441825, 4, 0, 1441826, 4, 0, 1441827, 4, 0, 1441828, 4, 0, 1441829, 5, 0, 1441870, 4, 0, 1441871, 4, 0, 1441872, 4, 0, 1441873, 4, 0, 1441874, 4, 0, 1441875, 4, 0, 1441876, 4, 0, 1507328, 3, 0, 1507329, 4, 0, 1507330, 4, 0, 1507331, 4, 0, 1507332, 4, 0, 1507333, 4, 0, 1507334, 4, 0, 1507335, 4, 0, 1507336, 4, 0, 1507337, 4, 0, 1507338, 4, 0, 1507339, 4, 0, 1507340, 4, 0, 1507341, 4, 0, 1507342, 4, 0, 1507343, 4, 0, 1507344, 4, 0, 1507345, 4, 0, 1507346, 4, 0, 1507347, 4, 0, 1507348, 4, 0, 1507349, 4, 0, 1507350, 4, 0, 1507351, 4, 0, 1507352, 4, 0, 1507353, 4, 0, 1507354, 4, 0, 1507355, 4, 0, 1507356, 4, 0, 1507357, 4, 0, 1507358, 4, 0, 1507359, 4, 0, 1507360, 4, 0, 1507361, 4, 0, 1507362, 4, 0, 1507363, 4, 0, 1507364, 4, 0, 1507365, 5, 0, 1507406, 4, 0, 1507407, 4, 0, 1507408, 4, 0, 1507409, 4, 0, 1507410, 4, 0, 1507411, 4, 0, 1507412, 4, 0, 1507413, 12, 0, 1572864, 3, 0, 1572865, 4, 0, 1572866, 4, 0, 1572867, 4, 0, 1572868, 4, 0, 1572869, 4, 0, 1572870, 4, 0, 1572871, 4, 0, 1572872, 4, 0, 1572873, 4, 0, 1572874, 4, 0, 1572875, 4, 0, 1572876, 4, 0, 1572877, 4, 0, 1572878, 4, 0, 1572879, 4, 0, 1572880, 4, 0, 1572881, 4, 0, 1572882, 4, 0, 1572883, 4, 0, 1572884, 4, 0, 1572885, 4, 0, 1572886, 4, 0, 1572887, 4, 0, 1572888, 4, 0, 1572889, 4, 0, 1572890, 4, 0, 1572891, 4, 0, 1572892, 4, 0, 1572893, 4, 0, 1572894, 4, 0, 1572895, 4, 0, 1572896, 4, 0, 1572897, 4, 0, 1572898, 4, 0, 1572899, 4, 0, 1572900, 4, 0, 1572901, 5, 0, 1572942, 4, 0, 1572943, 4, 0, 1572944, 4, 0, 1572945, 4, 0, 1572946, 4, 0, 1572947, 4, 0, 1572948, 4, 0, 1572949, 12, 0, 1638400, 3, 0, 1638401, 4, 0, 1638402, 4, 0, 1638403, 4, 0, 1638404, 4, 0, 1638405, 4, 0, 1638406, 4, 0, 1638407, 4, 0, 1638408, 4, 0, 1638409, 4, 0, 1638410, 4, 0, 1638411, 4, 0, 1638412, 4, 0, 1638413, 4, 0, 1638414, 4, 0, 1638415, 4, 0, 1638416, 4, 0, 1638417, 4, 0, 1638418, 4, 0, 1638419, 4, 0, 1638420, 4, 0, 1638421, 4, 0, 1638422, 4, 0, 1638423, 4, 0, 1638424, 4, 0, 1638425, 4, 0, 1638426, 4, 0, 1638427, 4, 0, 1638428, 4, 0, 1638429, 4, 0, 1638430, 4, 0, 1638431, 4, 0, 1638432, 4, 0, 1638433, 4, 0, 1638434, 4, 0, 1638435, 4, 0, 1638436, 4, 0, 1638437, 5, 0, 1638477, 11, 0, 1638478, 4, 0, 1638479, 4, 0, 1638480, 4, 0, 1638481, 4, 0, 1638482, 4, 0, 1638483, 4, 0, 1638484, 4, 0, 1638485, 12, 0, 1703936, 3, 0, 1703937, 4, 0, 1703938, 4, 0, 1703939, 4, 0, 1703940, 4, 0, 1703941, 4, 0, 1703942, 4, 0, 1703943, 4, 0, 1703944, 4, 0, 1703945, 4, 0, 1703946, 4, 0, 1703947, 4, 0, 1703948, 4, 0, 1703949, 4, 0, 1703950, 4, 0, 1703951, 4, 0, 1703952, 4, 0, 1703953, 4, 0, 1703954, 4, 0, 1703955, 4, 0, 1703956, 4, 0, 1703957, 4, 0, 1703958, 4, 0, 1703959, 4, 0, 1703960, 4, 0, 1703961, 4, 0, 1703962, 4, 0, 1703963, 4, 0, 1703964, 4, 0, 1703965, 4, 0, 1703966, 4, 0, 1703967, 4, 0, 1703968, 4, 0, 1703969, 4, 0, 1703970, 4, 0, 1703971, 4, 0, 1703972, 4, 0, 1703973, 5, 0, 1704014, 4, 0, 1704015, 4, 0, 1704016, 4, 0, 1704017, 4, 0, 1704018, 4, 0, 1704019, 4, 0, 1704020, 4, 0, 1704021, 12, 0, 1769472, 3, 0, 1769473, 4, 0, 1769474, 4, 0, 1769475, 4, 0, 1769476, 4, 0, 1769477, 4, 0, 1769478, 4, 0, 1769479, 4, 0, 1769480, 4, 0, 1769481, 4, 0, 1769482, 4, 0, 1769483, 4, 0, 1769484, 4, 0, 1769485, 4, 0, 1769486, 4, 0, 1769487, 4, 0, 1769488, 4, 0, 1769489, 4, 0, 1769490, 4, 0, 1769491, 4, 0, 1769492, 4, 0, 1769493, 4, 0, 1769494, 4, 0, 1769495, 4, 0, 1769496, 4, 0, 1769497, 4, 0, 1769498, 4, 0, 1769499, 4, 0, 1769500, 4, 0, 1769501, 4, 0, 1769502, 4, 0, 1769503, 4, 0, 1769504, 4, 0, 1769505, 4, 0, 1769506, 4, 0, 1769507, 4, 0, 1769508, 4, 0, 1769509, 5, 0, 1769550, 4, 0, 1769551, 4, 0, 1769552, 4, 0, 1769553, 4, 0, 1769554, 4, 0, 1769555, 4, 0, 1769556, 4, 0, 1769557, 12, 0, 1835008, 3, 0, 1835009, 4, 0, 1835010, 4, 0, 1835011, 4, 0, 1835012, 4, 0, 1835013, 4, 0, 1835014, 4, 0, 1835015, 4, 0, 1835016, 4, 0, 1835017, 4, 0, 1835018, 4, 0, 1835019, 4, 0, 1835020, 4, 0, 1835021, 4, 0, 1835022, 4, 0, 1835023, 4, 0, 1835024, 4, 0, 1835025, 4, 0, 1835026, 4, 0, 1835027, 4, 0, 1835028, 4, 0, 1835029, 4, 0, 1835030, 4, 0, 1835031, 4, 0, 1835032, 4, 0, 1835033, 4, 0, 1835034, 4, 0, 1835035, 4, 0, 1835036, 4, 0, 1835037, 4, 0, 1835038, 4, 0, 1835039, 4, 0, 1835040, 4, 0, 1835041, 4, 0, 1835042, 4, 0, 1835043, 4, 0, 1835044, 4, 0, 1835045, 5, 0, 1835086, 4, 0, 1835087, 4, 0, 1835088, 4, 0, 1835089, 4, 0, 1835090, 4, 0, 1835091, 4, 0, 1835092, 4, 0, 1835093, 12, 0, 1900621, 11, 0, 1900622, 4, 0, 1900623, 4, 0, 1900624, 4, 0, 1900625, 4, 0, 1900626, 4, 0, 1900627, 4, 0, 1900628, 4, 0, 1900629, 12, 0, 1966158, 4, 0, 1966159, 4, 0, 1966160, 4, 0, 1966161, 4, 0, 1966162, 4, 0, 1966163, 4, 0, 1966164, 4, 0, 1966165, 12, 0, 2031694, 4, 0, 2031695, 4, 0, 2031696, 4, 0, 2031697, 4, 0, 2031698, 4, 0, 2031699, 4, 0, 2031700, 4, 0, 2031701, 12, 0, 2097230, 4, 0, 2097231, 4, 0, 2097232, 4, 0, 2097233, 4, 0, 2097234, 4, 0, 2097235, 4, 0, 2097236, 4, 0, 2097237, 12, 0, 2162765, 11, 0, 2162766, 4, 0, 2162767, 4, 0, 2162768, 4, 0, 2162769, 4, 0, 2162770, 4, 0, 2162771, 4, 0, 2162772, 4, 0, 2162773, 12, 0, 2228302, 4, 0, 2228303, 4, 0, 2228304, 4, 0, 2228305, 4, 0, 2228306, 4, 0, 2228307, 4, 0, 2228308, 4, 0, 2228309, 12, 0, 2293838, 4, 0, 2293839, 4, 0, 2293840, 4, 0, 2293841, 4, 0, 2293842, 4, 0, 2293843, 4, 0, 2293844, 4, 0, 2293845, 12, 0, 2359374, 4, 0, 2359375, 4, 0, 2359376, 4, 0, 2359377, 4, 0, 2359378, 4, 0, 2359379, 4, 0, 2359380, 4, 0, 2359381, 12, 0, 2424909, 11, 0, 2424910, 4, 0, 2424911, 4, 0, 2424912, 4, 0, 2424913, 4, 0, 2424914, 4, 0, 2424915, 4, 0, 2424916, 4, 0, 2424917, 12, 0, 2490446, 4, 0, 2490447, 4, 0, 2490448, 4, 0, 2490449, 4, 0, 2490450, 4, 0, 2490451, 4, 0, 2490452, 4, 0, 2490453, 12, 0, 2555982, 4, 0, 2555983, 4, 0, 2555984, 4, 0, 2555985, 4, 0, 2555986, 4, 0, 2555987, 4, 0, 2555988, 4, 0, 2555989, 12, 0, 2621517, 11, 0, 2621518, 4, 0, 2621519, 4, 0, 2621520, 4, 0, 2621521, 4, 0, 2621522, 4, 0, 2621523, 4, 0, 2621524, 4, 0, 2621525, 12, 0, 2687054, 4, 0, 2687055, 4, 0, 2687056, 4, 0, 2687057, 4, 0, 2687058, 4, 0, 2687059, 4, 0, 2687060, 4, 0, 2752590, 4, 0, 2752591, 4, 0, 2752592, 4, 0, 2752593, 4, 0, 2752594, 4, 0, 2752595, 4, 0, 2752596, 4, 0, 2818126, 4, 0, 2818127, 4, 0, 2818128, 4, 0, 2818129, 4, 0, 2818130, 4, 0, 2818131, 4, 0, 2818132, 4, 0 )
+
+[node name="TriggerPerseguidor" type="Area2D" parent="."]
+position = Vector2( 928.556, 567.74 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 7 )
+
+[node name="OrigemPerseguidor" type="Position2D" parent="TriggerPerseguidor"]
+position = Vector2( -374.705, 6.64093 )
+
+[node name="Sprite" type="Sprite" parent="TriggerPerseguidor"]
+visible = false
+position = Vector2( 0.085144, -0.17028 )
+scale = Vector2( 0.489158, 0.489158 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerPerseguidor"]
+position = Vector2( 0, -0.138695 )
+shape = SubResource( 18 )
+
+[node name="TriggerVoador" type="Area2D" parent="."]
+position = Vector2( 326.959, 558.205 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador"]
+visible = false
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador"]
+position = Vector2( -0.119797, -0.0188673 )
+shape = SubResource( 19 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador"]
+position = Vector2( 197.738, 192.926 )
+
+[node name="NodeDeadzone" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1166.83, 1378.7 )
+
+[node name="NodeEnemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1184.4, 38.863 )
+
+[node name="NodeEnemy2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 3744.09, 21.055 )
+
+[node name="azuis" type="Node2D" parent="."]
+position = Vector2( 1672.57, -190.299 )
+script = ExtResource( 12 )
+
+[node name="aumenta_angulo" type="Area2D" parent="azuis"]
+position = Vector2( -31.7454, 62.8565 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="azuis/aumenta_angulo"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 50, 1640, 210, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/aumenta_angulo"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="azuis/aumenta_angulo"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/aumenta_angulo/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 21 )
+
+[node name="reduz_angulo" type="Area2D" parent="azuis"]
+position = Vector2( 106.305, 64.7776 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="azuis/reduz_angulo"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 40, 1830, 220, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/reduz_angulo"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 20 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="azuis/reduz_angulo"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/reduz_angulo/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 21 )
+
+[node name="elemento" type="StaticBody2D" parent="azuis"]
+position = Vector2( 519.72, 255.202 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="azuis/elemento"]
+position = Vector2( 1.75174, 2.49904 )
+scale = Vector2( 1.45207, 1.03888 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 74, 91, 223, 60 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento"]
+visible = false
+shape = SubResource( 22 )
+
+[node name="Area2D" type="Area2D" parent="azuis/elemento"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento/Area2D"]
+visible = false
+position = Vector2( 2.99368, -0.59874 )
+shape = SubResource( 23 )
+
+[node name="Trap1" type="Area2D" parent="azuis/elemento"]
+position = Vector2( -130.465, -50.8637 )
+scale = Vector2( 1.5, 1 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento/Trap1"]
+position = Vector2( -0.631256, 14.7778 )
+shape = SubResource( 24 )
+
+[node name="bear trap" type="Sprite" parent="azuis/elemento/Trap1"]
+position = Vector2( -0.23822, 16.048 )
+scale = Vector2( 0.407538, 0.589214 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 31, 266, 134, 34 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="azuis/elemento/Trap1"]
+position = Vector2( 0.151886, 0.453537 )
+stream = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="azuis/elemento/Trap1"]
+anims/ativar_trap = SubResource( 25 )
+
+[node name="Trap2" type="Area2D" parent="azuis/elemento"]
+position = Vector2( -43.3373, -51.6213 )
+scale = Vector2( 1.5, 1 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento/Trap2"]
+position = Vector2( -0.631256, 14.7778 )
+shape = SubResource( 24 )
+
+[node name="bear trap" type="Sprite" parent="azuis/elemento/Trap2"]
+position = Vector2( -0.23822, 16.048 )
+scale = Vector2( 0.407538, 0.589214 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 31, 266, 134, 34 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="azuis/elemento/Trap2"]
+position = Vector2( 0.151886, 0.453537 )
+stream = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="azuis/elemento/Trap2"]
+anims/ativar_trap = SubResource( 26 )
+
+[node name="Trap3" type="Area2D" parent="azuis/elemento"]
+position = Vector2( 43.2664, -51.4468 )
+scale = Vector2( 1.5, 1 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento/Trap3"]
+position = Vector2( -0.631256, 14.7778 )
+shape = SubResource( 24 )
+
+[node name="bear trap" type="Sprite" parent="azuis/elemento/Trap3"]
+position = Vector2( -0.23822, 16.048 )
+scale = Vector2( 0.407538, 0.589214 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 31, 266, 134, 34 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="azuis/elemento/Trap3"]
+position = Vector2( 0.151886, 0.453537 )
+stream = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="azuis/elemento/Trap3"]
+anims/ativar_trap = SubResource( 27 )
+
+[node name="Trap4" type="Area2D" parent="azuis/elemento"]
+position = Vector2( 132.046, -51.4902 )
+scale = Vector2( 1.5, 1 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="azuis/elemento/Trap4"]
+position = Vector2( -0.631256, 14.7778 )
+shape = SubResource( 24 )
+
+[node name="bear trap" type="Sprite" parent="azuis/elemento/Trap4"]
+position = Vector2( -0.23822, 16.048 )
+scale = Vector2( 0.407538, 0.589214 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 31, 266, 134, 34 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="azuis/elemento/Trap4"]
+position = Vector2( 0.151886, 0.453537 )
+stream = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="azuis/elemento/Trap4"]
+anims/ativar_trap = SubResource( 28 )
+
+[node name="NodeTrap" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3329.74, -186.61 )
+
+[node name="roxos" type="Node2D" parent="."]
+position = Vector2( 4230.47, -301.443 )
+script = ExtResource( 19 )
+
+[node name="aumenta_x" type="Area2D" parent="roxos"]
+position = Vector2( 51.4648, 38.4864 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/aumenta_x"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 760, 920, 220, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_x"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/aumenta_x"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_x/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="reduz_x" type="Area2D" parent="roxos"]
+position = Vector2( 169.705, 38.3509 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/reduz_x"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 760, 1100, 220, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_x"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/reduz_x"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_x/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="aumenta_y" type="Area2D" parent="roxos"]
+position = Vector2( 281.531, 37.4431 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/aumenta_y"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 770, 1280, 210, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_y"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/aumenta_y"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_y/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="reduz_y" type="Area2D" parent="roxos"]
+position = Vector2( 398.531, 38.4431 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/reduz_y"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 760, 1470, 220, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_y"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/reduz_y"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_y/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="aumenta_angulo" type="Area2D" parent="roxos"]
+position = Vector2( 519.531, 37.4431 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/aumenta_angulo"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 770, 1640, 210, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_angulo"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/aumenta_angulo"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/aumenta_angulo/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="reduz_angulo" type="Area2D" parent="roxos"]
+position = Vector2( 635.531, 39.4431 )
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/reduz_angulo"]
+texture = ExtResource( 14 )
+region_enabled = true
+region_rect = Rect2( 760, 1830, 220, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_angulo"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 29 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roxos/reduz_angulo"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/reduz_angulo/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 30 )
+
+[node name="elemento" type="KinematicBody2D" parent="roxos"]
+position = Vector2( 72.7817, -125.774 )
+rotation = 1.0472
+scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/elemento"]
+scale = Vector2( 0.25, 0.2 )
+texture = ExtResource( 21 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/elemento"]
+rotation = 1.5708
+shape = SubResource( 31 )
+
+[node name="Area2D" type="Area2D" parent="roxos/elemento"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/elemento/Area2D"]
+rotation = 1.5708
+shape = SubResource( 32 )
+
+[node name="AreaCamera" type="Area2D" parent="roxos"]
+position = Vector2( 302.329, 172.315 )
+scale = Vector2( 1.19999, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/AreaCamera"]
+shape = SubResource( 33 )
+
+[node name="bloqueio" type="StaticBody2D" parent="roxos"]
+position = Vector2( 754.953, 124.982 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SpriteAtivado" type="Sprite" parent="roxos/bloqueio"]
+position = Vector2( 2.1908, 1.05042 )
+scale = Vector2( 0.497554, 0.497554 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 122, 216, 156, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/bloqueio"]
+position = Vector2( 2.70184, 1.62109 )
+shape = SubResource( 34 )
+
+[node name="SpriteDesativado" type="Sprite" parent="roxos/bloqueio"]
+visible = false
+position = Vector2( 2.22076, 0.203247 )
+scale = Vector2( 0.494531, 0.494531 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 453, 216, 157, 450 )
+
+[node name="chave" type="Area2D" parent="roxos"]
+position = Vector2( 521.531, -146.557 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="roxos/chave"]
+position = Vector2( 0.950195, 0.675293 )
+rotation = -3.14159
+scale = Vector2( 0.0695347, 0.0695347 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roxos/chave"]
+position = Vector2( 1.94116, 0.970581 )
+shape = SubResource( 35 )
+
+[node name="labirinto" type="Node2D" parent="."]
+position = Vector2( 3812.11, -743.666 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Parede01" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2928.71, 577.356 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede01"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 44, 32, 547, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede01"]
+shape = SubResource( 36 )
+
+[node name="Parede03" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1977.05, 1376.85 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede03"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 50, 300, 941, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede03"]
+shape = SubResource( 37 )
+
+[node name="Parede15" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 3028.54, 291.42 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede15"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 50, 300, 941, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede15"]
+shape = SubResource( 37 )
+
+[node name="Parede14" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1914.4, 302.171 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede14"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 50, 300, 941, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede14"]
+shape = SubResource( 37 )
+
+[node name="Parede11" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 3044.64, 1371.61 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede11"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 50, 300, 941, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede11"]
+shape = SubResource( 37 )
+
+[node name="Parede04" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2122.26, 936.874 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede04"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 48, 445, 359, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede04"]
+shape = SubResource( 38 )
+
+[node name="Parede05" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1877.53, 483.151 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede05"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 35, 585, 247, 85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede05"]
+shape = SubResource( 39 )
+
+[node name="Parede08" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2262.65, 820.203 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede08"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 500, 685, 84, 84 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede08"]
+shape = SubResource( 40 )
+
+[node name="Parede13" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2468.48, 288.203 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede13"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 500, 685, 84, 84 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede13"]
+shape = SubResource( 40 )
+
+[node name="Parede19" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2512.81, 1371.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede19"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 500, 685, 84, 84 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede19"]
+shape = SubResource( 40 )
+
+[node name="Parede20" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1451.98, 1377.54 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede20"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 500, 685, 84, 84 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede20"]
+shape = SubResource( 40 )
+
+[node name="Parede09" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1849.99, 947.755 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede09"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 630, 463, 85, 371 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede09"]
+shape = SubResource( 41 )
+
+[node name="Parede16" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 2679.19, 1115.37 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede16"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 630, 463, 85, 371 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede16"]
+shape = SubResource( 41 )
+
+[node name="Parede10" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1356.86, 1127.18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede10"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 800, 459, 85, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede10"]
+shape = SubResource( 42 )
+
+[node name="Parede12" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 1353.17, 538.903 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede12"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 800, 459, 85, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede12"]
+shape = SubResource( 42 )
+
+[node name="Parede17" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 3576.21, 546.289 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede17"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 800, 459, 85, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede17"]
+shape = SubResource( 42 )
+
+[node name="Parede18" type="StaticBody2D" parent="labirinto"]
+position = Vector2( 3579.69, 1114.11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="labirinto/Parede18"]
+texture = ExtResource( 22 )
+region_enabled = true
+region_rect = Rect2( 800, 459, 85, 537 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="labirinto/Parede18"]
+shape = SubResource( 42 )
+
+[node name="TriggerVoador2" type="Area2D" parent="."]
+position = Vector2( 4446.58, -579.645 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador2"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador2"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador2"]
+position = Vector2( 202.766, 86.2897 )
+
+[node name="TriggerVoador3" type="Area2D" parent="."]
+position = Vector2( 4572.93, -541.645 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador3"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador3"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador3"]
+position = Vector2( -390.295, 265.615 )
+
+[node name="TriggerVoador4" type="Area2D" parent="."]
+position = Vector2( 4437.08, -400.095 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador4"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador4"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador4"]
+position = Vector2( 434.231, 140.452 )
+
+[node name="TriggerVoador5" type="Area2D" parent="."]
+position = Vector2( 4723.03, -494.145 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador5"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador5"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador5"]
+position = Vector2( -123.341, 239.306 )
+
+[node name="TriggerVoador6" type="Area2D" parent="."]
+position = Vector2( 4660.33, -420.995 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador6"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador6"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador6"]
+position = Vector2( 350.084, 231.883 )
+
+[node name="TriggerVoador7" type="Area2D" parent="."]
+position = Vector2( 4272.73, -605.295 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador7"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador7"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador7"]
+position = Vector2( 330.775, 381.772 )
+
+[node name="TriggerVoador8" type="Area2D" parent="."]
+position = Vector2( 4261.33, -374.445 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador8"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador8"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 43 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador8"]
+position = Vector2( 203.333, 31.73 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = 15.0
+autoplay = true
+[connection signal="body_entered" from="TriggerPerseguidor" to="TriggerPerseguidor" method="_on_TriggerPerseguidor_body_entered"]
+[connection signal="body_entered" from="TriggerVoador" to="TriggerVoador" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="azuis/aumenta_angulo" to="azuis" method="_on_aumenta_angulo_body_entered"]
+[connection signal="body_entered" from="azuis/reduz_angulo" to="azuis" method="_on_reduz_angulo_body_entered"]
+[connection signal="body_entered" from="azuis/elemento/Area2D" to="azuis" method="_on_elemento_body_entered"]
+[connection signal="body_entered" from="azuis/elemento/Trap1" to="azuis/elemento/Trap1" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="azuis/elemento/Trap2" to="azuis/elemento/Trap2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="azuis/elemento/Trap3" to="azuis/elemento/Trap3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="azuis/elemento/Trap4" to="azuis/elemento/Trap4" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="roxos/aumenta_x" to="roxos" method="_on_aumenta_x_body_entered"]
+[connection signal="body_entered" from="roxos/reduz_x" to="roxos" method="_on_reduz_x_body_entered"]
+[connection signal="body_entered" from="roxos/aumenta_y" to="roxos" method="_on_aumenta_y_body_entered"]
+[connection signal="body_entered" from="roxos/reduz_y" to="roxos" method="_on_reduz_y_body_entered"]
+[connection signal="body_entered" from="roxos/aumenta_angulo" to="roxos" method="_on_aumenta_angulo_body_entered"]
+[connection signal="body_entered" from="roxos/reduz_angulo" to="roxos" method="_on_reduz_angulo_body_entered"]
+[connection signal="body_entered" from="roxos/elemento/Area2D" to="roxos" method="_on_elemento_body_entered"]
+[connection signal="body_entered" from="roxos/AreaCamera" to="roxos" method="_on_AreaCamera_body_entered"]
+[connection signal="body_exited" from="roxos/AreaCamera" to="roxos" method="_on_AreaCamera_body_exited"]
+[connection signal="body_entered" from="roxos/chave" to="roxos" method="_on_chave_body_entered"]
+[connection signal="body_entered" from="TriggerVoador2" to="TriggerVoador2" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador3" to="TriggerVoador3" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador4" to="TriggerVoador4" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador5" to="TriggerVoador5" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador6" to="TriggerVoador6" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador7" to="TriggerVoador7" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador8" to="TriggerVoador8" method="_on_TriggerVoador_body_entered"]

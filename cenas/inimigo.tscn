@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://img/bart.png" type="Texture" id=1]
+[ext_resource path="res://scripts/inimigo.gd" type="Script" id=2]
+[ext_resource path="res://som/bart risada.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.6814, 36.9311 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.7552, 36.3168 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22.3421, 0.589329 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "andando"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 40, 96, 50, 56 ), Rect2( 93, 96, 51, 55 ), Rect2( 147, 97, 53, 54 ), Rect2( 210, 99, 54, 53 ), Rect2( 275, 96, 53, 55 ), Rect2( 346, 96, 53, 56 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "morto"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 699, 93.956, 54, 65 ) ]
+}
+
+[node name="NodeEnemy" type="Node2D"]
+
+[node name="inimigo" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="inimigo"]
+position = Vector2( -0.675781, -0.680374 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 40, 96, 50, 56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo"]
+position = Vector2( -5.92337, 1.39373 )
+shape = SubResource( 1 )
+
+[node name="area_dano" type="Area2D" parent="inimigo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo/area_dano"]
+position = Vector2( -5.24864, 0.983407 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="inimigo"]
+position = Vector2( 22.0173, 0.731671 )
+enabled = true
+
+[node name="Timer" type="Timer" parent="inimigo"]
+wait_time = 2.0
+one_shot = true
+
+[node name="area_morte" type="Area2D" parent="inimigo"]
+position = Vector2( -4.18271, -43.2666 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo/area_morte"]
+position = Vector2( -1.2575, 1.2575 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="inimigo"]
+autoplay = "andando"
+anims/andando = SubResource( 4 )
+anims/morto = SubResource( 5 )
+
+[node name="risada" type="AudioStreamPlayer2D" parent="inimigo"]
+stream = ExtResource( 3 )
+volume_db = -11.556
+[connection signal="body_entered" from="inimigo/area_dano" to="inimigo" method="_on_area_dano_body_entered"]
+[connection signal="timeout" from="inimigo/Timer" to="inimigo" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="inimigo/area_morte" to="inimigo" method="_on_area_morte_body_entered"]

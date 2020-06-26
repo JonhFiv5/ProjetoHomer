@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://img/homer.png" type="Texture" id=1]
+[ext_resource path="res://scripts/detector.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.2369
+
+[node name="tiro" type="Node2D"]
+
+[node name="detector" type="Area2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="detector"]
+position = Vector2( 0.000862122, 0.14489 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 503, 66, 66 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="detector/Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="detector"]
+[connection signal="area_entered" from="detector" to="detector" method="_on_detector_area_entered"]
+[connection signal="body_entered" from="detector" to="detector" method="_on_detector_body_entered"]
+[connection signal="screen_exited" from="detector/VisibilityNotifier2D" to="detector" method="_on_VisibilityNotifier2D_screen_exited"]

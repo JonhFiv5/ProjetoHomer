@@ -1,0 +1,867 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://img/map/bg 4.jpg" type="Texture" id=1]
+[ext_resource path="res://img/map/scifi_platformTiles_32x32.png" type="Texture" id=2]
+[ext_resource path="res://img/HUD Menus.png" type="Texture" id=3]
+[ext_resource path="res://img/map/Jungle_terrain.png" type="Texture" id=4]
+[ext_resource path="res://cenas/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/pretos.gd" type="Script" id=6]
+[ext_resource path="res://cenas/telas/tela4.gd" type="Script" id=7]
+[ext_resource path="res://img/map/bg 4nv.png" type="Texture" id=8]
+[ext_resource path="res://img/voador trigger.png" type="Texture" id=9]
+[ext_resource path="res://scripts/TriggerVoador.gd" type="Script" id=10]
+[ext_resource path="res://cenas/donut.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/deadzone.gd" type="Script" id=12]
+[ext_resource path="res://som/telas.wav" type="AudioStream" id=13]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 32, 32, 32, 32, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 96, 0, 96, 96, 0, 96 )
+
+[sub_resource type="TileSet" id=8]
+0/name = "Jungle_terrain.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 96, 128, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Jungle_terrain.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 128, 32, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Jungle_terrain.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 128, 32, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Jungle_terrain.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 384, 0, 32, 96 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Jungle_terrain.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 416, 0, 32, 96 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Jungle_terrain.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 544, 128, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "scifi_platformTiles_32x32.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 576, 256, 96, 96 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+
+[sub_resource type="Animation" id=9]
+length = 100.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("pretos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.6, 98.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1253.68, -330.093 ), Vector2( 8052.46, -330.093 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 16.4433, 19.7054 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 5904.55, 10 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 49.5626, 157.302 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 35.9692, 175.957 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 88.5771, 22.2553 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 83.8535, 60.2272 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 118.219, 3.9373 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 101.101, 2.42531 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 105.609, 28.1456 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -9.96063, -17.3631 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 68.721 ]
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1310611, 6, 0, -1310608, 6, 0, -1310605, 6, 0, -1310602, 6, 0, -1310599, 6, 0, -1310596, 6, 0, -1114036, 6, 0, -1114033, 6, 0, -1114030, 6, 0, -1114027, 6, 0, -1114024, 6, 0, -1114021, 6, 0, -1114018, 6, 0, -1114003, 6, 0, -1113988, 6, 0, -917452, 6, 0, -917440, 6, 0, -917428, 6, 0, -917410, 6, 0, -917395, 6, 0, -917380, 6, 0, -851949, 6, 0, -851938, 6, 0, -720851, 6, 0, -720844, 6, 0, -720832, 6, 0, -720820, 6, 0, -720802, 6, 0, -720787, 6, 0, -720784, 6, 0, -720781, 6, 0, -720778, 6, 0, -720775, 6, 0, -720772, 6, 0, -655341, 6, 0, -655330, 6, 0, -589786, 6, 0, -524243, 6, 0, -524236, 6, 0, -524224, 6, 0, -524212, 6, 0, -524194, 6, 0, -458733, 6, 0, -458722, 6, 0, -393178, 6, 0, -327635, 6, 0, -327628, 6, 0, -327616, 6, 0, -327604, 6, 0, -327601, 6, 0, -327598, 6, 0, -327595, 6, 0, -327592, 6, 0, -327589, 6, 0, -327586, 6, 0, -327547, 6, 0, -327544, 6, 0, -327541, 6, 0, -327538, 6, 0, -327535, 6, 0, -327532, 6, 0, -327529, 6, 0, -327526, 6, 0, -327523, 6, 0, -327520, 6, 0, -327517, 6, 0, -327514, 6, 0, -327511, 6, 0, -327508, 6, 0, -327505, 6, 0, -327502, 6, 0, -327499, 6, 0, -327496, 6, 0, -327493, 6, 0, -327490, 6, 0, -327487, 6, 0, -327484, 6, 0, -327481, 6, 0, -327478, 6, 0, -262125, 6, 0, -262114, 6, 0, -196570, 6, 0, -131027, 6, 0, -131020, 6, 0, -131008, 6, 0, -130927, 6, 0, -130924, 6, 0, -130921, 6, 0, -130918, 6, 0, -130915, 6, 0, -130912, 6, 0, -130909, 6, 0, -130906, 6, 0, -130903, 6, 0, -130900, 6, 0, -130897, 6, 0, -130894, 6, 0, -130891, 6, 0, -130888, 6, 0, -130885, 6, 0, -65517, 6, 0, -65506, 6, 0, 38, 6, 0, 65581, 6, 0, 65588, 6, 0, 65600, 6, 0, 65652, 6, 0, 65687, 6, 0, 65690, 6, 0, 65693, 6, 0, 65696, 6, 0, 131102, 6, 0, 196646, 6, 0, 262189, 6, 0, 262208, 6, 0, 262253, 6, 0, 262256, 6, 0, 262259, 6, 0, 262262, 6, 0, 262265, 6, 0, 262268, 6, 0, 262277, 6, 0, 262298, 6, 0, 262301, 6, 0, 393254, 6, 0, 458828, 6, 0, 458831, 6, 0, 458834, 6, 0, 458837, 6, 0, 458840, 6, 0, 458843, 6, 0, 458846, 6, 0, 458861, 6, 0, 458876, 6, 0, 458885, 6, 0, 458888, 6, 0, 589862, 6, 0, 720895, 1, 0, 655360, 0, 0, 655362, 0, 0, 655364, 2, 0, 655436, 6, 0, 655454, 6, 0, 655469, 6, 0, 655484, 6, 0, 655493, 6, 0, 655496, 6, 0, 655499, 6, 0, 655532, 6, 0, 655556, 6, 0, 655559, 6, 0, 655562, 6, 0, 851967, 3, 0, 786432, 5, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 4, 0, 786451, 6, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 852044, 6, 0, 852062, 6, 0, 852077, 6, 0, 852092, 6, 0, 852101, 6, 0, 852104, 6, 0, 852107, 6, 0, 852110, 6, 0, 852137, 6, 0, 852140, 6, 0, 852143, 6, 0, 852161, 6, 0, 852164, 6, 0, 852167, 6, 0, 852170, 6, 0, 917504, 5, 0, 917505, 5, 0, 917506, 5, 0, 917507, 5, 0, 917556, 6, 0, 1048575, 3, 0, 983040, 5, 0, 983041, 5, 0, 983042, 5, 0, 983043, 5, 0, 983044, 4, 0, 983059, 6, 0, 983104, 6, 0, 1048576, 5, 0, 1048577, 5, 0, 1048578, 5, 0, 1048579, 5, 0, 1048652, 6, 0, 1048670, 6, 0, 1048685, 6, 0, 1048700, 6, 0, 1048709, 6, 0, 1048712, 6, 0, 1048715, 6, 0, 1048718, 6, 0, 1048721, 6, 0, 1048724, 6, 0, 1048727, 6, 0, 1048730, 6, 0, 1048733, 6, 0, 1048736, 6, 0, 1048739, 6, 0, 1048742, 6, 0, 1048745, 6, 0, 1048748, 6, 0, 1048751, 6, 0, 1048754, 6, 0, 1048757, 6, 0, 1048760, 6, 0, 1048763, 6, 0, 1048766, 6, 0, 1048769, 6, 0, 1048772, 6, 0, 1048775, 6, 0, 1048778, 6, 0, 1114112, 5, 0, 1114113, 5, 0, 1114114, 5, 0, 1114115, 5, 0, 1114164, 6, 0, 1245183, 3, 0, 1179648, 5, 0, 1179649, 5, 0, 1179650, 5, 0, 1179651, 5, 0, 1179652, 4, 0, 1179667, 6, 0, 1179678, 6, 0, 1179689, 6, 0, 1179712, 6, 0, 1245184, 5, 0, 1245185, 5, 0, 1245186, 5, 0, 1245187, 5, 0, 1245260, 6, 0, 1245278, 6, 0, 1245293, 6, 0, 1245308, 6, 0, 1310720, 5, 0, 1310721, 5, 0, 1310722, 5, 0, 1310723, 5, 0, 1310772, 6, 0, 1441791, 3, 0, 1376256, 5, 0, 1376257, 5, 0, 1376258, 5, 0, 1376259, 5, 0, 1376260, 4, 0, 1376275, 6, 0, 1376286, 6, 0, 1376297, 6, 0, 1376320, 6, 0, 1441792, 5, 0, 1441793, 5, 0, 1441794, 5, 0, 1441795, 5, 0, 1441868, 6, 0, 1441886, 6, 0, 1441901, 6, 0, 1441916, 6, 0, 1572863, 3, 0, 1507328, 5, 0, 1507329, 5, 0, 1507330, 5, 0, 1507331, 5, 0, 1507332, 4, 0, 1507380, 6, 0, 1572864, 5, 0, 1572865, 5, 0, 1572866, 5, 0, 1572867, 5, 0, 1572883, 6, 0, 1572894, 6, 0, 1572905, 6, 0, 1572928, 6, 0, 1638400, 5, 0, 1638401, 5, 0, 1638402, 5, 0, 1638403, 5, 0, 1638476, 6, 0, 1638494, 6, 0, 1703988, 6, 0, 1769491, 6, 0, 1769502, 6, 0, 1769513, 6, 0, 1769536, 6, 0, 1835084, 6, 0, 1835102, 6, 0, 1900596, 6, 0, 1966099, 6, 0, 1966110, 6, 0, 1966121, 6, 0, 1966144, 6, 0, 2031692, 6, 0, 2097204, 6, 0, 2162752, 6, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="bg 4" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 628.629, 365.572 )
+texture = ExtResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 197.218, 295.118 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/andamento = SubResource( 9 )
+
+[node name="TriggerVoador4" type="Area2D" parent="."]
+position = Vector2( 1257.73, 334.946 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador4"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador4"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador4"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador18" type="Area2D" parent="."]
+position = Vector2( 1482.55, 172.313 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador18"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador18"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador18"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador5" type="Area2D" parent="."]
+position = Vector2( 1707.21, 77.1218 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador5"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador5"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador5"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador8" type="Area2D" parent="."]
+position = Vector2( 1709.16, 494.777 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador8"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador8"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador8"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador9" type="Area2D" parent="."]
+position = Vector2( 2094.86, 170.627 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador9"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador9"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador9"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador11" type="Area2D" parent="."]
+position = Vector2( 2478.06, -113.581 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador11"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador11"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador11"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador13" type="Area2D" parent="."]
+position = Vector2( 3057.09, -17.9147 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador13"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador13"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador13"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador14" type="Area2D" parent="."]
+position = Vector2( 3526.72, 178.54 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador14"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador14"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador14"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador15" type="Area2D" parent="."]
+position = Vector2( 4297.38, -117.772 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador15"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador15"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador15"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador16" type="Area2D" parent="."]
+position = Vector2( 5545.64, 367.256 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador16"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador16"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador16"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador25" type="Area2D" parent="."]
+position = Vector2( 5939.49, 555.62 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador25"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador25"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador25"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador26" type="Area2D" parent="."]
+position = Vector2( 6374.44, 356.982 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador26"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador26"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador26"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador19" type="Area2D" parent="."]
+position = Vector2( 4877.81, 552.195 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador19"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador19"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador19"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador20" type="Area2D" parent="."]
+position = Vector2( 5138.09, 555.62 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador20"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador20"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador20"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador21" type="Area2D" parent="."]
+position = Vector2( 3751.05, 79.5743 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador21"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador21"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador21"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador27" type="Area2D" parent="."]
+position = Vector2( 4001.06, 172.044 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador27"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador27"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador27"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador22" type="Area2D" parent="."]
+position = Vector2( 2737.31, 261.088 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador22"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador22"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador22"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador23" type="Area2D" parent="."]
+position = Vector2( 2990.75, 261.088 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador23"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador23"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador23"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador24" type="Area2D" parent="."]
+position = Vector2( 2990.75, 261.088 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador24"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador24"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador24"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador17" type="Area2D" parent="."]
+position = Vector2( 5062.12, 171.011 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador17"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador17"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador17"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador12" type="Area2D" parent="."]
+position = Vector2( 2476.55, 270.791 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador12"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador12"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador12"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador10" type="Area2D" parent="."]
+position = Vector2( 2094.86, 527.114 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador10"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador10"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador10"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador6" type="Area2D" parent="."]
+position = Vector2( 1007.15, 620.477 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador6"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador6"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador6"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="TriggerVoador7" type="Area2D" parent="."]
+position = Vector2( 1357.64, 618.259 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador7"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador7"]
+position = Vector2( 1.38005, 1.42164 )
+shape = SubResource( 10 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador7"]
+position = Vector2( -1.10262, 0.308723 )
+
+[node name="donut" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1720.64, 286.067 )
+
+[node name="donut2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 641.044, 241.652 )
+
+[node name="donut3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2472.57, 76.3535 )
+
+[node name="donut4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4332.89, 52.5032 )
+
+[node name="donut5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6519.27, 169.631 )
+
+[node name="deadzone" type="Area2D" parent="."]
+position = Vector2( 4938.54, 964.81 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadzone"]
+shape = SubResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 24.0
+autoplay = true
+
+[node name="validador1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="validador1"]
+position = Vector2( 849.452, 314.676 )
+shape = SubResource( 12 )
+
+[node name="validador2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="validador2"]
+position = Vector2( 1956.22, 352.694 )
+shape = SubResource( 13 )
+
+[node name="validador3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="validador3"]
+position = Vector2( 2667.68, 76.9384 )
+shape = SubResource( 13 )
+
+[node name="validador4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="validador4"]
+position = Vector2( 4600.26, 198.41 )
+shape = SubResource( 13 )
+
+[node name="validador5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="validador5"]
+position = Vector2( 6654.85, 159.426 )
+shape = SubResource( 13 )
+
+[node name="pretos" type="Node2D" parent="."]
+position = Vector2( 1274.47, -330.093 )
+script = ExtResource( 6 )
+
+[node name="aumenta_y" type="Area2D" parent="pretos"]
+position = Vector2( -1056.49, 510.462 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="pretos/aumenta_y"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 530, 1270, 210, 170 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/aumenta_y"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 14 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pretos/aumenta_y"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/aumenta_y/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 15 )
+
+[node name="reduz_y" type="Area2D" parent="pretos"]
+position = Vector2( -943.608, 510 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="pretos/reduz_y"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 530, 1460, 210, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/reduz_y"]
+position = Vector2( 0, 58.6132 )
+shape = SubResource( 14 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pretos/reduz_y"]
+position = Vector2( 0, -4.62316 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/reduz_y/StaticBody2D"]
+position = Vector2( 0.513336, -6.1601 )
+shape = SubResource( 15 )
+
+[node name="elemento" type="KinematicBody2D" parent="pretos"]
+position = Vector2( -1002.76, 715.549 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/elemento"]
+position = Vector2( 8.70584, -170.425 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pretos/elemento"]
+position = Vector2( 12.2741, -28.811 )
+shape = SubResource( 17 )
+
+[node name="bg 4nv" type="Sprite" parent="pretos/elemento"]
+modulate = Color( 0.552941, 0.533333, 0.552941, 1 )
+position = Vector2( 573.203, 157.254 )
+scale = Vector2( 1.07219, 1 )
+z_index = 2
+texture = ExtResource( 8 )
+__meta__ = {
+"_editor_description_": "ss"
+}
+
+[node name="Area2D" type="Area2D" parent="pretos/elemento"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pretos/elemento/Area2D"]
+position = Vector2( 12.9481, -68.9037 )
+shape = SubResource( 18 )
+[connection signal="body_entered" from="TriggerVoador4" to="TriggerVoador4" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador18" to="TriggerVoador18" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador5" to="TriggerVoador5" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador8" to="TriggerVoador8" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador9" to="TriggerVoador9" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador11" to="TriggerVoador11" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador13" to="TriggerVoador13" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador14" to="TriggerVoador14" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador15" to="TriggerVoador15" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador16" to="TriggerVoador16" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador25" to="TriggerVoador25" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador26" to="TriggerVoador26" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador19" to="TriggerVoador19" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador20" to="TriggerVoador20" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador21" to="TriggerVoador21" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador27" to="TriggerVoador27" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador22" to="TriggerVoador22" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador23" to="TriggerVoador23" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador24" to="TriggerVoador24" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador17" to="TriggerVoador17" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador12" to="TriggerVoador12" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador10" to="TriggerVoador10" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador6" to="TriggerVoador6" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="TriggerVoador7" to="TriggerVoador7" method="_on_TriggerVoador_body_entered"]
+[connection signal="body_entered" from="deadzone" to="deadzone" method="_on_deadzone_body_entered"]
+[connection signal="body_entered" from="validador1" to="." method="_on_validador1_body_entered"]
+[connection signal="body_entered" from="validador2" to="." method="_on_validador2_body_entered"]
+[connection signal="body_entered" from="validador3" to="." method="_on_validador3_body_entered"]
+[connection signal="body_entered" from="validador4" to="." method="_on_validador4_body_entered"]
+[connection signal="body_entered" from="validador5" to="." method="_on_validador5_body_entered"]
+[connection signal="body_entered" from="pretos/aumenta_y" to="pretos" method="_on_aumenta_y_body_entered"]
+[connection signal="body_entered" from="pretos/reduz_y" to="pretos" method="_on_reduz_y_body_entered"]
+[connection signal="body_entered" from="pretos/elemento/Area2D" to="." method="_on_Area2D_body_entered"]

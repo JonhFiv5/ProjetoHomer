@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://img/bear trap.png" type="Texture" id=1]
+[ext_resource path="res://scripts/trap.gd" type="Script" id=2]
+[ext_resource path="res://som/trap.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.1, 11.5823 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ativar_trap"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("bear trap:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 31, 266, 134, 34 ), Rect2( 181, 245, 129, 52 ), Rect2( 338, 228, 108, 67 ), Rect2( 488, 219, 78, 76 ), Rect2( 615, 215, 39, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="NodeTrap" type="Node2D"]
+position = Vector2( -2.23239, -1.34949 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0.481415, 0.693848 )
+scale = Vector2( 1.5, 1 )
+z_index = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.631256, 14.7778 )
+shape = SubResource( 1 )
+
+[node name="bear trap" type="Sprite" parent="Area2D"]
+position = Vector2( -0.23822, 16.048 )
+scale = Vector2( 0.407538, 0.589214 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 31, 266, 134, 34 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2( 0.151886, 0.453537 )
+stream = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+anims/ativar_trap = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

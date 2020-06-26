@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/TriggerPerseguidor.gd" type="Script" id=1]
+[ext_resource path="res://scripts/TriggerVoador.gd" type="Script" id=2]
+[ext_resource path="res://img/perseguidor trigger.png" type="Texture" id=3]
+[ext_resource path="res://img/voador trigger.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.971
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 15.6015
+
+[node name="NodeSpawners" type="Node2D"]
+
+[node name="TriggerPerseguidor" type="Area2D" parent="."]
+position = Vector2( 56.5349, 41.073 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="OrigemPerseguidor" type="Position2D" parent="TriggerPerseguidor"]
+position = Vector2( 2.77973, 39.843 )
+
+[node name="Sprite" type="Sprite" parent="TriggerPerseguidor"]
+position = Vector2( 0.085144, -0.17028 )
+scale = Vector2( 0.489158, 0.489158 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerPerseguidor"]
+position = Vector2( 0, -0.138695 )
+shape = SubResource( 1 )
+
+[node name="TriggerVoador" type="Area2D" parent="."]
+position = Vector2( 140.535, 43.1257 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TriggerVoador"]
+position = Vector2( 0.357048, -0.401377 )
+scale = Vector2( 0.484443, 0.484443 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerVoador"]
+position = Vector2( 0.27739, -0.416084 )
+shape = SubResource( 2 )
+
+[node name="OrigemVoador" type="Position2D" parent="TriggerVoador"]
+position = Vector2( 1.52588e-05, 37.0633 )
+[connection signal="body_entered" from="TriggerPerseguidor" to="TriggerPerseguidor" method="_on_TriggerPerseguidor_body_entered"]
+[connection signal="body_entered" from="TriggerVoador" to="TriggerVoador" method="_on_TriggerVoador_body_entered"]

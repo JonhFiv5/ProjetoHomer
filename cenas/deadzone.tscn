@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/deadzone.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5904.55, 10 )
+
+[node name="NodeDeadzone" type="Node2D"]
+
+[node name="deadzone" type="Area2D" parent="."]
+position = Vector2( -15.5059, 13.8341 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadzone"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="deadzone" to="deadzone" method="_on_deadzone_body_entered"]
